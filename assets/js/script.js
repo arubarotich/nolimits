@@ -29,3 +29,16 @@ const closeNavbar = function () {
 };
 
 addEventOnElem(navLinks, "click", closeNavbar);
+
+const header = document.querySelector("[data-header]");
+const backToBtn = document.querySelector("[data-back-top-btn");
+
+self.addEventListener("scroll", function () {
+  if (this.window.scrollY >= 100) {
+    header.classList.add("active");
+    backToBtn.classList.add("active");
+  } else {
+    header.classList.remove("active");
+    backToBtn.classList.remove("active");
+  }
+});
